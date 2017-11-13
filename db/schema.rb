@@ -10,14 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113084959) do
+ActiveRecord::Schema.define(version: 20171113090150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "addresses", force: :cascade do |t|
+    t.string "street"
+    t.string "zip_code"
+    t.string "city"
+    t.bigint "pharmacy_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pharmacy_id"], name: "index_addresses_on_pharmacy_id"
+  end
+
+  create_table "pharmacies", force: :cascade do |t|
+    t.string "name"
+    t.string "opening_times"
+    t.string "url"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "quotes", force: :cascade do |t|
@@ -25,6 +46,8 @@ ActiveRecord::Schema.define(version: 20171113084959) do
     t.string "content"
     t.string "name"
     t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +67,5 @@ ActiveRecord::Schema.define(version: 20171113084959) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "pharmacies"
 end

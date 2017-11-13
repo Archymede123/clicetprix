@@ -6,7 +6,6 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
 $font-size-base: 18px;
 
 // Colors
@@ -33,7 +32,7 @@ $border-radius-small: 2px;
 
 $font-size-base:          $base-size;
 $line-height-base:        $base-height;
-$headings-font-family:    $header-font;
+$headings-font-family:    $headers-font;
 
 // Semantic color scheme
 // => http://getbootstrap.com/customize/#colors
@@ -52,8 +51,8 @@ $label-default-bg: #fff;
 $label-primary-bg: #194361;
 
 
-$container-tablet: 1170px;
-$container-desktop: 1170px;
+$container-tablet: 100%;
+$container-desktop: 100% !important;
 $container-sm: 1170px;
 
 $grid-gutter-width: 15px;
@@ -79,3 +78,10 @@ $input-color-placeholder: #2B3036;
 
 // modals
 $modal-inner-padding: 40px;
+
+//** Global textual link color.
+$link-color:            $brand-primary !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%) !default;
+//** Link hover decoration.
+$link-hover-decoration: underline !default;

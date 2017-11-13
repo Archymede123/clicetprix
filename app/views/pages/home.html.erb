@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container p0 m0">
+  <div class="home home__background" style="background-image: linear-gradient(-45deg, #FED63E 50%, #FFED72 100%);">
+    <div class="home__header">
+      <div class="pt-- pl--">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+      </div>
+      <p class="pr">Devenir pharmacie partenaire</p>
+    </div>
+    <div class="home__baseline">
+      <%= image_tag "Smartphone.png", id: "smartphone" %>
+      <div id="background-square" style="background-image: url('<%= image_url "background_element.png" %>')">
+        <div class="home__landing-content">
+          <h1>OUBLIEZ LA QUEUE EN PHARMACIE</h1>
+          <h2>Envoyez en photo votre ordonnance,<br>retrait express de votre commande en 2 heures !</h2>
+          <div class="pt+ mt">
+            <%= render 'shared/research-button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
