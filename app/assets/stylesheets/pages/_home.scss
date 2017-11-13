@@ -56,6 +56,48 @@
     }
   }
 
+  &__how-works {
+    height: 570px;
+    padding-top: 80px;
+    border-bottom: 3px solid $color-brand;
+    .container {
+      padding-left: 90px;
+    }
+    .polygon-demo {
+      height: 200px;
+      background-repeat: no-repeat;
+      background-position-x: 50%;
+    }
+    .polygon-demo--width {
+      width: 190px;
+      margin: auto;
+      img {
+        display: block;
+        margin: 0 auto;
+        padding-top: 24px
+      }
+      h2 {
+      font-size: 20px;
+      }
+    }
+    .next-step {
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &__products {
+    height: 570px;
+    padding-top: 80px;
+    border-bottom: 3px solid $color-brand;
+  }
+
 }
 
 
