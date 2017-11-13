@@ -23,3 +23,59 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+
+/* -------------------------------------
+ * Bootstrap sass variable
+ * (see http://getbootstrap.com/customize/#less-variables)
+ * ------------------------------------- */
+
+
+
+$font-size-base:          $base-size;
+$line-height-base:        $base-height;
+$headings-font-family:    $header-font;
+
+// Semantic color scheme
+// => http://getbootstrap.com/customize/#colors
+
+// Buttons / inputs radius
+$border-radius-base:  0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
+
+
+// Badge color
+$badge-bg: $brand-primary;
+
+// Labels
+$label-default-bg: #fff;
+$label-primary-bg: #194361;
+
+
+$container-tablet: 1170px;
+$container-desktop: 1170px;
+$container-sm: 1170px;
+
+$grid-gutter-width: 15px;
+
+
+// font size
+$font-size-h3:  16px;
+
+
+$btn-primary-bg: $green;
+$btn-success-bg: #C5D1DF;
+
+$btn-default-bg: #fff;
+// $btn-default-color: #fff;
+$btn-border-radius-base: 0px;
+
+
+// form inputs
+$input-height-base: 50px;
+$input-color-placeholder: #2B3036;
+
+
+
+// modals
+$modal-inner-padding: 40px;
