@@ -104,7 +104,7 @@
 
   .carousel-control {
     top: 170px;
-    bottom: 262px;
+    bottom: 314px;
     width: 7%;
     font-size: 90px;
     line-height: 38px;
@@ -119,6 +119,92 @@
       background-image: none !important;
   }
 
+  .pagination > .active > a {
+    background-color: none;
+    border: none;
+    color: $color-brand;
+  }
+
+  .pagination > li > a {
+    background-color: none;
+    border: none;
+    color: blue;
+  }
+
+  &__testimonials {
+    height: 570px;
+    padding-top: 80px;
+
+    .testimonials-background {
+      background: #FFFFFF;
+      box-shadow: 0 1px 4px 0 rgba(0,0,0,0.21);
+      height: 300px;
+      width: 400px;
+      position: absolute;
+
+      .testimonials-quote {
+        position: relative;
+        top: -23px;
+        left: 5px;
+        height: 41px;
+      }
+
+      .testimonials-image {
+        position: relative;
+        top: -26px;
+        left: 20%;
+        border-radius: 50%;
+        border: 1px solid #FED63E;
+        height: 100px;
+        width: 100px;
+      }
+
+      .testimonials-people {
+        position: relative;
+        bottom: -30px;
+
+        strong {
+          font-style: italic;
+          font-weight: normal;
+        }
+      }
+    }
+
+  }
+
+  &__start-now {
+    height: 300px;
+
+    h2 {
+      margin-top: 0px;
+    }
+  }
+
+  &__about {
+    min-height: 400px;
+
+    .about--container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .fa-check {
+        color: $color-brand;
+      }
+    }
+  }
+
+  &__footer {
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
 }
 
-
+.pagination > .active > a {
+  background: none !important;
+}
