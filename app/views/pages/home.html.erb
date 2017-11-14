@@ -66,9 +66,9 @@
       <h2 class="text-center">DES PRODUITS A PRIX PLANCHER</h2>
       <p class="text-center pb+ mb+">Une sélection de produits à prix coutants à commander exclusivement sur le site de votre pharmacie avec votre ordonnance.</p>
       <div class="span8 welcome-image">
-        <div id="myCarousel" class="carousel slide col-md-6 col-md-offset-3">
+        <div id="myCarousel" class="carousel slide col-md-6 col-md-offset-3" data-ride="carousel">
         <!-- Carousel items -->
-          <div class="carousel-inner">
+          <div class="carousel-inner" role="listbox">
             <div class="active item">
               <%= image_tag "Image_carousel_example1.png" %>
             </div>
@@ -91,18 +91,18 @@
 
             <!-- LINKED NAV -->
           <div class="text-center">
-            <ul class="carousel-linked-nav pt pagination">
-              <li class="active"><a href="#1"><i class="fa fa-circle" aria-hidden="true"></i></a>
+            <ol class="carousel-linked-nav pt carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#1"><i class="fa fa-circle" aria-hidden="true"></i></a>
               </li>
-              <li><a href="#2"><i class="fa fa-circle" aria-hidden="true"></i></a>
+              <li data-target="#myCarousel" data-slide-to="1"><a href="#2"><i class="fa fa-circle" aria-hidden="true"></i></a>
               </li>
-              <li><a href="#3"><i class="fa fa-circle" aria-hidden="true"></i></a>
+              <li data-target="#myCarousel" data-slide-to="2"><a href="#3"><i class="fa fa-circle" aria-hidden="true"></i></a>
               </li>
-              <li><a href="#4"><i class="fa fa-circle" aria-hidden="true"></i></a>
+              <li data-target="#myCarousel" data-slide-to="3"><a href="#4"><i class="fa fa-circle" aria-hidden="true"></i></a>
               </li>
-              <li><a href="#5"><i class="fa fa-circle" aria-hidden="true"></i></a>
+              <li data-target="#myCarousel" data-slide-to="4"><a href="#5"><i class="fa fa-circle" aria-hidden="true"></i></a>
               </li>
-            </ul>
+            </ol>
           </div>
         </div>
       </div>

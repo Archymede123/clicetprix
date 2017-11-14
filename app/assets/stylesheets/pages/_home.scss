@@ -119,13 +119,24 @@
       background-image: none !important;
   }
 
-  .pagination > .active > a {
+  .carousel-indicators {
+    bottom: -50px;
+    li {
+      border: 1px solid $color-brand;
+    }
+
+    .active {
+      background-color: $color-brand;
+    }
+  }
+
+  .carousel-indicators > .active > a {
     background-color: none;
     border: none;
     color: $color-brand;
   }
 
-  .pagination > li > a {
+  .carousel-indicators > li > a {
     background-color: none;
     border: none;
     color: blue;
