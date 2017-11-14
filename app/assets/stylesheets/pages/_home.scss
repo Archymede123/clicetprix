@@ -93,9 +93,31 @@
   }
 
   &__products {
-    height: 570px;
+    height: 800px;
     padding-top: 80px;
     border-bottom: 3px solid $color-brand;
+  }
+
+  .nav {
+    background-color: black;
+  }
+
+  .carousel-control {
+    top: 170px;
+    bottom: 222px;
+    width: 7%;
+    font-size: 90px;
+    line-height: 38px;
+    opacity: 1;
+    color: $color-brand;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .right, .left {
+      // background-color: black !important;
+      background-image: none !important;
   }
 
 }
