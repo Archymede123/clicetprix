@@ -110,6 +110,7 @@
     line-height: 38px;
     opacity: 1;
     color: $color-brand;
+    background-color: black;
 
     &:hover {
       opacity: 0.5;
@@ -130,17 +131,7 @@
     }
   }
 
-  .carousel-indicators > .active > a {
-    background-color: none;
-    border: none;
-    color: $color-brand;
-  }
 
-  .carousel-indicators > li > a {
-    background-color: none;
-    border: none;
-    color: blue;
-  }
 
   &__testimonials {
     height: 570px;

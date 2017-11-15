@@ -1,0 +1,24 @@
+
+<div class="results-wrap results">
+  <div class="results__search-bar" style="background-image: linear-gradient(-45deg, #FED63E 50%, #FFED72 100%);">
+    <div class="pt-- pl--">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+    </div>
+    <p class="pt pl25">Envoyez une photo de votre ordonnance,<br>retrait express de votre commande en 2 heures !</p>
+    <div class="pl25 pt pr">
+      <%= render 'shared/research-button' %>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="map">
+  <div class="map__gmap">
+    <div id="map" style="width: 100%; height: 100%;"></div>
+  </div>
+</div>

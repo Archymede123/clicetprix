@@ -1,0 +1,14 @@
+
+.results {
+  width: 50%;
+  margin: 0px;
+  padding: 0px;
+
+  .pl25 {
+    padding-left: 25px;
+  }
+
+  &__search-bar {
+    height: 30vh;
+  }
+}
