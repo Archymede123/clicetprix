@@ -19,6 +19,8 @@ gem 'uglifier'
 gem "coffee-rails"
 gem "gmaps4rails"
 gem 'recaptcha', require: 'recaptcha/rails'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
 
 
 source 'https://rails-assets.org' do

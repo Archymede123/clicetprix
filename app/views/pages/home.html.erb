@@ -71,7 +71,7 @@
         <!-- Carousel items -->
           <div class="carousel-inner" role="listbox">
             <div class="active item">
-              <%= image_tag "Image_carousel_example1.png" %>
+              <%= cl_image_tag @product.image, height: 459, width: 699, crop: :fill %>
             </div>
             <div class="item">
               <%= image_tag "Image_carousel_example2.png" %>
