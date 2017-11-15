@@ -1,0 +1,11 @@
+.contact {
+  height: 100vh;
+
+  .text-area-size {
+    height: 100px;
+  }
+
+  input::placeholder, textarea::placeholder {
+    font-style: italic;
+  }
+}

@@ -18,6 +18,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'recaptcha', require: 'recaptcha/rails'
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

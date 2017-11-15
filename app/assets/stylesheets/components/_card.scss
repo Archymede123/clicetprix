@@ -8,6 +8,13 @@
 
   &:hover {
     box-shadow: -3px -8px 10px 0 rgba(0,0,0,0.04), 3px 8px 10px 0 rgba(0,0,0,0.09);
+
+    .order-button {
+    padding: 5px 25%;
+    background-color: $cta-blue;
+    color: white;
+    border-radius: 31px;
+    }
   }
 
   &__content {
