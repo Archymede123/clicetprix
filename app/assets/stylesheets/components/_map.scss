@@ -3,17 +3,7 @@
   @media (max-width:767px) {
     display: none;
   }
-  &__top {
-    position: fixed;
-    top: $nav-height;
-    background:rgba(43, 48, 54, .9);
-    height: 40px;
-    color: #fff;
-    left: 530px;
-    right: 0;
-    z-index: 10;
-    box-shadow:0 2px 4px 0 rgba(0, 0, 0, 0.11);
-  }
+
   &__gmap {
     // position: absolute;
     // top: 80px;

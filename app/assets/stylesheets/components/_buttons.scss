@@ -39,4 +39,17 @@
   }
 }
 
+.order-button {
+  padding-left: 25%;
+  text-decoration: underline;
+  color: $cta-blue;
+
+  &:hover {
+    padding: 5px 25%;
+    background-color: $cta-blue;
+    color: white;
+    border-radius: 31px;
+  }
+}
+
 
