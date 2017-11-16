@@ -1,13 +1,13 @@
 <div class="card">
   <div class="card__content pt pl">
-    <p class="card-title">Pharmacie du Prado</p>
-    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp103 avenue du prado, 13008 Marseille</p>
-    <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbspOuvert du lundi au samedi de 09h à 19h.</p>
+    <p class="card-title"><%= pharmacy.name  %></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp <%= "#{pharmacy.address.street}, #{pharmacy.address.zip_code}, #{pharmacy.address.city}" %></p>
+    <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times %></p>
     <div class="pt--">
       <a href="http://pharmacie-passard.clicetprix.com" class="order-button">Commander dans cette pharmacie</a>
     </div>
   </div>
   <div class="card__picture">
-    <%= image_tag "pharmacie-pic.jpg" %>
+    <%= cl_image_tag pharmacy.image, height: 150, width: 214, crop: :fill %>
   </div>
 </div>

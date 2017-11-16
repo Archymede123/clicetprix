@@ -14,12 +14,12 @@
     <div class="results__list" style="background-image: linear-gradient(-180deg, #FFFEFB 0%, #FFFCF0 100%);">
       <p class="pl25 pt">Les pharmacies Clic & Prix proches de chez vous :</p>
       <div class="card-container pt pl- pr-">
-        <%= render 'shared/card' %>
-        <%= render 'shared/card' %>
-        <%= render 'shared/card' %>
-        <%= render 'shared/card' %>
-        <%= render 'shared/card' %>
-        <%= render 'shared/card' %>
+        <%= render 'shared/card', pharmacy: Pharmacy.last %>
+        <%= render 'shared/card', pharmacy: Pharmacy.last %>
+        <%= render 'shared/card', pharmacy: Pharmacy.last %>
+        <%= render 'shared/card', pharmacy: Pharmacy.last %>
+        <%= render 'shared/card', pharmacy: Pharmacy.last %>
+        <%= render 'shared/card', pharmacy: Pharmacy.last %>
       </div>
     </div>
   </div>

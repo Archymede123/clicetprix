@@ -4,13 +4,13 @@ class PharmaciesController < ApplicationController
   def index
     # @pharmacies = Pharmacie.where.not(latitude: nil, longitude: nil)
 
-    @pharmacies = Pharmacy.all
+    # @pharmacies = Pharmacy.all
 
-    @hash = Gmaps4rails.build_markers(@pharmacies) do |pharmacie, marker|
-      marker.lat pharmacie.latitude
-      marker.lng pharmacie.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-    end
+    # @hash = Gmaps4rails.build_markers(@pharmacies) do |pharmacie, marker|
+    #   marker.lat pharmacie.latitude
+    #   marker.lng pharmacie.longitude
+    #   # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    # end
   end
 
 end
