@@ -1,2 +1,194 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container p0 m0">
+  <div class="home home__background" style="background-image: linear-gradient(-45deg, #FED63E 50%, #FFED72 100%);">
+    <div class="home__header">
+      <div class="pt-- pl--">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+      </div>
+      <%= link_to contact_path do %> <p class="pr">Devenir pharmacie partenaire</p>
+      <% end %>
+    </div>
+    <div class="home__baseline">
+      <%= image_tag "Smartphone.png", id: "smartphone" %>
+      <div id="background-square" style="background-image: url('<%= image_url "background_element.png" %>')">
+        <div class="home__landing-content">
+          <h1>OUBLIEZ LA QUEUE EN PHARMACIE</h1>
+          <h2>Envoyez en photo votre ordonnance,<br>retrait express de votre commande en 2 heures !</h2>
+          <div class="pt+ mt">
+            <p>Trouvez une pharmacie près de chez vous</p>
+            <%= render 'shared/research-button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home__how-works" style="background-image: linear-gradient(-180deg, #FFFEFB 0%, #FFFCF0 100%);">
+      <h2 class="text-center">COMMENT ÇA MARCHE ?</h2>
+      <p class="text-center pb+ mb+">Simple comme trois clics</p>
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="polygon-demo" style="background-image: url('<%= image_url "polygon.png" %>')">
+              <div class="polygon-demo--width">
+                <%= image_tag "icon_smartphone.png" %>
+                <h2 class="text-center">Cherchez une pharmacie</h2>
+              </div>
+            </div>
+            <p class="text-center pt">Trouvez la pharmacie la plus proche de chez vous et rendez-vous sur son site.</p>
+          </div>
+          <div class="hidden-xs col-md-1 next-step">
+            <%= image_tag "next.png", class:"align-middle" %>
+          </div>
+          <div class="col-md-3">
+            <div class="polygon-demo" style="background-image: url('<%= image_url "polygon.png" %>')">
+              <div class="polygon-demo--width">
+                <%= image_tag "icon_photo-camera.png" %>
+                <h2 class="text-center">Envoyez votre ordonnance en photo</h2>
+              </div>
+            </div>
+            <p class="text-center pt">Prenez votre ordonnance en photo, envoyez la en 2 clics.</p>
+          </div>
+          <div class="hidden-xs col-md-1 next-step">
+            <%= image_tag "next.png", class:"align-middle" %>
+          </div>
+          <div class="col-md-3">
+            <div class="polygon-demo" style="background-image: url('<%= image_url "polygon.png" %>')">
+              <div class="polygon-demo--width">
+                <%= image_tag "icon_drugs.png" %>
+                <h2 class="text-center">Récuperez votre commande</h2>
+              </div>
+            </div>
+            <p class="text-center pt">Venez récuperer votre ordonnance après avoir reçu une notification de votre pharmacien.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home__products">
+      <h2 class="text-center">DES PRODUITS A PRIX PLANCHER</h2>
+      <p class="text-center pb+ mb+">Une sélection de produits à prix coutants à commander exclusivement sur le site de votre pharmacie avec votre ordonnance.</p>
+      <div class="span8 welcome-image">
+        <div id="myCarousel" class="carousel slide col-md-6 col-md-offset-3" data-ride="carousel">
+        <!-- Carousel items -->
+          <div class="carousel-inner" role="listbox">
+            <div class="active item">
+              <%= cl_image_tag @product.image, height: 459, width: 699, crop: :fill %>
+            </div>
+            <div class="item">
+              <%= image_tag "Image_carousel_example2.png" %>
+            </div>
+            <div class="item">
+              <%= image_tag "Image_carousel_example3.png" %>
+            </div>
+            <div class="item">
+              <%= image_tag "Image_carousel_example4.png" %>
+            </div>
+            <div class="item">
+              <%= image_tag "Image_carousel_example5.png" %>
+            </div>
+          </div>
+            <!-- Carousel nav -->
+          <a class="carousel-control left car-nav" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right car-nav" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+            <!-- LINKED NAV -->
+          <div class="text-center">
+            <ol class="carousel-linked-nav pt carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"><i class="fa fa-circle" aria-hidden="true"></i></a>
+              </li>
+              <li data-target="#myCarousel" data-slide-to="1"><i class="fa fa-circle" aria-hidden="true"></i></a>
+              </li>
+              <li data-target="#myCarousel" data-slide-to="2"><i class="fa fa-circle" aria-hidden="true"></i></a>
+              </li>
+              <li data-target="#myCarousel" data-slide-to="3"><i class="fa fa-circle" aria-hidden="true"></i></a>
+              </li>
+              <li data-target="#myCarousel" data-slide-to="4"><i class="fa fa-circle" aria-hidden="true"></i></a>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home__testimonials" style="background-image: linear-gradient(-180deg, #FFFEFB 0%, #FFFCF0 100%);">
+      <h2 class="text-center">ILS PARLENT DE CLIC & PRIX</h2>
+      <div class="container pt+">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-2">
+            <div class="testimonials-background">
+              <%= image_tag "quote.png", class:"testimonials-quote" %>
+              <%= image_tag "pharmacienne2.jpg", class:"testimonials-image" %></a>
+              <p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni perferendis minima laborum, impedit illum ullam aut beatae saepe corrupti est nostrum. Illum, ab, accusantium. Esse fugit assumenda harum, aperiam autem.</p>
+              <p class="testimonials-people pl">Félicie Dupont,<strong> pharmacienne à Brive La Gaillarde</strong></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonials-background">
+              <%= image_tag "quote.png", class:"testimonials-quote" %>
+              <%= image_tag "pharmacienne2.jpg", class:"testimonials-image" %></a>
+              <p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni perferendis minima laborum, impedit illum ullam aut beatae saepe corrupti est nostrum. Illum, ab, accusantium. Esse fugit assumenda harum, aperiam autem.</p>
+              <p class="testimonials-people pl">Félicie Dupond,<strong> pharmacienne à Brive La Gaillarde</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home__start-now" style="background-image: linear-gradient(-45deg, #FED63E 50%, #FFED72 100%);">
+      <h2 class="text-center pt+">COMMENCEZ L'EXPERIENCE CLIC & PRIX</h2>
+      <p class="text-center">Trouvez une pharmacie près de chez vous.</p>
+      <div class="col-md-6 col-md-offset-3 pt+ mt+">
+        <%= render 'shared/research-button' %>
+      </div>
+    </div>
+    <div class="home__about pb+">
+      <h2 class="text-center pt+">LES AVANTAGES CLIC & PRIX</h2>
+      <p class="text-center">Le service de l’experience en pharmacie.</p>
+      <div class="container pt+">
+        <div class="row">
+          <div class="col-md-4 about--container">
+            <%= image_tag "icon-Advantages.png" %>
+            <h3 class="text-center pt pb">SIMPLICITÉ</h3>
+            <div>
+              <p><i class="fa fa-check" aria-hidden="true"></i> Pas d’application à télécharger</p>
+              <p><i class="fa fa-check" aria-hidden="true"></i> Accessible sur tous supports</p>
+            </div>
+          </div>
+          <div class="col-md-4 about--container">
+            <%= image_tag "icon-time.png" %>
+            <h3 class="text-center pt pb">RAPIDITÉ</h3>
+            <div>
+              <p><i class="fa fa-check" aria-hidden="true"></i> Pas d’application à télécharger</p>
+              <p><i class="fa fa-check" aria-hidden="true"></i> Accessible sur tous supports</p>
+            </div>
+          </div>
+          <div class="col-md-4 about--container">
+            <%= image_tag "icon-exclu.png" %>
+            <h3 class="text-center pt pb">EXCLUSIVITÉ</h3>
+            <div>
+              <p><i class="fa fa-check" aria-hidden="true"></i> Pas d’application à télécharger</p>
+              <p><i class="fa fa-check" aria-hidden="true"></i> Accessible sur tous supports</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home__footer" style="background-image: linear-gradient(-180deg, #FFFCF0 0%, #FFFEFB 100%);">
+      <div class="pl+ ml+">
+        <p>A propos de Click & Prix</p>
+        <p>Vous êtes une pharmacie ? Devenez partenaire</p>
+        <p>Termes et conditions</p>
+      </div>
+      <div class="pr+ mr+">
+        <p>Retrouvez nous sur les réseaux sociaux</p>
+        <ul class="list-inline text-center">
+          <li><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></li>
+          <li><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></li>
+          <li><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+

@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+p "start seeding"
+
+Product.all.each(&:destroy!)
+
+10.times do
+  product = Product.new
+  product.name = "product"
+  url = "https://source.unsplash.com/1200x800/"
+  product.remote_image_url = url
+  product.save!
+end
+
+p "seeding completed"

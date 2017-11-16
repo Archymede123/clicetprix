@@ -1,0 +1,28 @@
+.result-container {
+  display: flex;
+}
+.results {
+  width: 50%;
+  margin: 0px;
+  padding: 0px;
+
+  .pl25 {
+    padding-left: 25px;
+  }
+
+  &__search-bar {
+    height: 30vh;
+  }
+
+  &__list {
+
+  }
+}
+
+#map {
+  flex: 0 0 50%;
+  height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+}
+

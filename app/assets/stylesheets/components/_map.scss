@@ -1,0 +1,28 @@
+.map {
+  margin-left: 650px;
+  @media (max-width:767px) {
+    display: none;
+  }
+
+  &__gmap {
+    // position: absolute;
+    // top: 80px;
+    // left: $results-width;
+    // right: 0;
+
+    z-index: 9;
+    border-left: solid 1px lighten(#2B3036, 50);
+    box-shadow:-2px 0 4px 0 rgba(0, 0, 0, 0.11);
+    overflow:hidden;
+    // &.js-sticked {
+    //   top: 0px;
+    // }
+  }
+}
+
+.gm-style .gm-style-iw {
+  // padding: 40px;
+  .lead {
+    margin-bottom: 0;
+  }
+}
