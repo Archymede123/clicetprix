@@ -70,21 +70,17 @@
         <div id="myCarousel" class="carousel slide col-md-6 col-md-offset-3" data-ride="carousel">
         <!-- Carousel items -->
           <div class="carousel-inner" role="listbox">
-            <div class="active item">
-              <%= cl_image_tag @product.image, height: 459, width: 699, crop: :fill %>
-            </div>
-            <div class="item">
-              <%= cl_image_tag @product.image, height: 459, width: 699, crop: :fill %>
-            </div>
-            <div class="item">
-              <%= cl_image_tag @product.image, height: 459, width: 699, crop: :fill %>
-            </div>
-            <div class="item">
-              <%= cl_image_tag @product.image, height: 459, width: 699, crop: :fill %>
-            </div>
-            <div class="item">
-              <%= cl_image_tag @product.image, height: 459, width: 699, crop: :fill %>
-            </div>
+            <% @products.each_with_index do |product, index| %>
+              <% if index == 0 %>
+                <div class="active item">
+                <%= cl_image_tag product.image, height: 459, width: 699, crop: :fill %>
+                </div>
+              <% else %>
+                <div class="item">
+                <%= cl_image_tag product.image, height: 459, width: 699, crop: :fill %>
+                </div>
+              <% end %>
+            <% end %>
           </div>
             <!-- Carousel nav -->
           <a class="carousel-control left car-nav" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -93,16 +89,15 @@
             <!-- LINKED NAV -->
           <div class="text-center">
             <ol class="carousel-linked-nav pt carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"><i class="fa fa-circle" aria-hidden="true"></i></a>
-              </li>
-              <li data-target="#myCarousel" data-slide-to="1"><i class="fa fa-circle" aria-hidden="true"></i></a>
-              </li>
-              <li data-target="#myCarousel" data-slide-to="2"><i class="fa fa-circle" aria-hidden="true"></i></a>
-              </li>
-              <li data-target="#myCarousel" data-slide-to="3"><i class="fa fa-circle" aria-hidden="true"></i></a>
-              </li>
-              <li data-target="#myCarousel" data-slide-to="4"><i class="fa fa-circle" aria-hidden="true"></i></a>
-              </li>
+              <% @products.each_with_index do |product, index| %>
+                <% if index == 0 %>
+                  <li data-target="#myCarousel" data-slide-to="<%= index %>" class="active"><i class="fa fa-circle" aria-hidden="true"></i></a>
+                  </li>
+                <% else %>
+                  <li data-target="#myCarousel" data-slide-to="<%= index %>"><i class="fa fa-circle" aria-hidden="true"></i></a>
+                  </li>
+                <% end %>
+              <% end %>
             </ol>
           </div>
         </div>
