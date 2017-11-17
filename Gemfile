@@ -37,4 +37,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  gem "letter_opener"
 end
