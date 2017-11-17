@@ -7,5 +7,12 @@ class Pharmacy < ApplicationRecord
   validates :opening_times, presence: true
   validates :url, presence: true
   validates :address, presence: true
+
+  geocoded_by :full_address
+  after_validation :geocode
+
+  def full_address
+    "#{address.street}, #{address.zip_code} #{address.city}"
+  end
 end
 

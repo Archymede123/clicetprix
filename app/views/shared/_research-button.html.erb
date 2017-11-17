@@ -1,9 +1,9 @@
 
+<form action="<%= pharmacies_path %>" class="research-button">
+  <i class="fa fa-map-marker" aria-hidden="true"></i>
+  <input type="text" placeholder="Ville, rue, code postal ..." name="address" autofocus='true' value="<%= params[:address]%>" class="search-field" id="pharmacy-lookup">
+  <input type="submit" value="Chercher" class="cta">
+</form>
 
-<div class="research-button">
-  <div>
-    <i class="fa fa-map-marker" aria-hidden="true"></i>
-    <input type="text" placeholder="Ville, rue, code postal ...">
-  </div>
-  <div class="cta"><%= link_to "Chercher", root_path %></div>
-</div>
+
+
