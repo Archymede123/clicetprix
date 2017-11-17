@@ -2,12 +2,11 @@ function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
 
-  var flatAddress = document.getElementById('pharmacy-lookup');
-  flatAddress.blur();
-  flatAddress.value = components.address;
+  var pharmacyAddress = document.getElementById('pharmacy-lookup');
+  pharmacyAddress.blur();
+  pharmacyAddress.value = components.address;
 
-  document.getElementById('pharmacy_zip_code').value = components.zip_code;
-  document.getElementById('pharmacy_city').value = components.city;
+
 
   if (components.country_code) {
     var selector = '#flat_country option[value="' + components.country_code + '"]';
@@ -58,15 +57,15 @@ function getAddressComponents(place) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  var flatAddress = document.getElementById('pharmacy-lookup');
+  var pharmacyAddress = document.getElementById('pharmacy-lookup');
 
-  if (flatAddress) {
-    var autocomplete = new google.maps.places.Autocomplete(flatAddress, { types: ['geocode'] });
+  if (pharmacyAddress) {
+    var autocomplete = new google.maps.places.Autocomplete(pharmacyAddress, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-    google.maps.event.addDomListener(flatAddress, 'keydown', function(e) {
-      if (e.key === "Enter") {
-        e.preventDefault(); // Do not submit the form on Enter.
-      }
-    });
+    // google.maps.event.addDomListener(pharmacyAddress, 'keydown', function(e) {
+    //   if (e.key === "Enter") {
+    //     e.preventDefault(); // Do not submit the form on Enter.
+    //   }
+    // });
   }
 });
