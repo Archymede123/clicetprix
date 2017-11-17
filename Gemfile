@@ -21,6 +21,8 @@ gem "gmaps4rails"
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 
 source 'https://rails-assets.org' do
@@ -34,4 +36,6 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  gem "letter_opener"
 end

@@ -8,28 +8,34 @@
   <p class="text-center">Vous souhaitez faire bénéficier à vos clients du service digital Clic & Prix</p>
   <p class="text-center pt+ mt">Contactez-nous ou appelez-nous au 04.01.02.03.04.05</p>
 
-  <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
-    <input placeholder="Votre pharmacie" name="pharmacy" class="form-control form-contact" autofocus='true' value="<%= params[:pharmacy]%>">
-  </div>
+<form action="<%= new_contact_path %>" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
+      <input placeholder="Votre pharmacie" name="pharmacy" class="form-control form-contact" autofocus='true' value="<%= params[:pharmacy]%>">
+    </div>
 
-  <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
-    <input placeholder="Votre email" name="email" class="form-control form-contact" autofocus='true' value="<%= params[:email]%>">
-  </div>
+    <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
+      <input placeholder="Votre email" name="email" class="form-control form-contact" autofocus='true' value="<%= params[:email]%>">
+    </div>
 
-  <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
-    <input placeholder="Votre numéro de téléphone" name="phone" class="form-control form-contact" autofocus='true' value="<%= params[:phone]%>">
-  </div>
+    <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
+      <input placeholder="Votre numéro de téléphone" name="phone" class="form-control form-contact" autofocus='true' value="<%= params[:phone]%>">
+    </div>
 
-   <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
-    <textarea placeholder="Votre message" name="message" class="form-control form-contact text-area-size" autofocus='true' value="<%= params[:message]%>"></textarea>
-  </div>
+     <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
+      <textarea placeholder="Votre message" name="message" class="form-control form-contact text-area-size" autofocus='true' value="<%= params[:message]%>"></textarea>
+    </div>
 
-  <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
-        <%= recaptcha_tags %>
-  </div>
+    <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"  style="margin-top: 15px;">
+          <%= recaptcha_tags %>
+    </div>
 
-  <div class="col-xs-6 col-xs-offset-3"  style="margin-top: 15px;text-align: center;">
-    <input type="submit" class="btn btn-primary btn-lg mt mb cp-button" value="Envoyer">
-  </div>
+    <div class="col-xs-6 col-xs-offset-3"  style="margin-top: 15px;text-align: center;">
+      <input type="submit" class="btn btn-primary btn-lg mt mb cp-button" value="Envoyer">
+    </div>
+
+    </div>
+</form>
 
 </div>
