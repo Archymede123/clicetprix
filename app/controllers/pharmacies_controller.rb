@@ -2,9 +2,11 @@ class PharmaciesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    # @pharmacies = Pharmacie.where.not(latitude: nil, longitude: nil)
 
-    # @pharmacies = Pharmacy.all
+    address = params[:address]
+    @pharmacies = Pharmacy.where.not(latitude: nil, longitude: nil).near(address, 10)
+
+
 
     # @hash = Gmaps4rails.build_markers(@pharmacies) do |pharmacie, marker|
     #   marker.lat pharmacie.latitude
