@@ -11,6 +11,7 @@ p "start seeding"
 
 Product.all.each(&:destroy!)
 Quote.all.each(&:destroy!)
+Pharmacy.all.each(&:destroy!)
 
 10.times do
   product = Product.new
@@ -30,14 +31,15 @@ end
   quote.save!
 end
 
-10.times do
+5.times do
   pharmacy = Pharmacy.new
   pharmacy.name = Faker::Company.name
   pharmacy.url = "http://pharmacie-passard.clicetprix.com"
   url = "https://source.unsplash.com/400x300/"
   pharmacy.remote_image_url = url
   pharmacy.opening_times = "Ouvert du lundi au samedi de 09h à 19h."
-  address = Address.new(street: "12 rue paradis", zip_code: "13006", city: "Marseille")
+  street = ["05 rue Sylvabelle", "84 rue dragon", "34 rue falque"].sample
+  address = Address.new(street: street, zip_code: "13006", city: "Marseille")
   pharmacy.address = address
   pharmacy.save!
   address.save!
