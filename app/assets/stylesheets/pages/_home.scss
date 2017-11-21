@@ -33,24 +33,45 @@ a {
 
   #smartphone {
     position: relative;
-    left: 100px;
+    left: 10%;
     top: 100px;
     z-index: 10;
+
+    @media (max-width: 1130px) {
+    left: 2%;
+    }
+
+    @media (min-width: 768px) and (max-width: 1044px) {
+    width: 18%;
+    }
   }
 
   #background-square {
-    left: 70px;
+    left: 5%;
     top: -55px;
     height: 380px;
-    width: 810px;
+    width: 85%;
     background-repeat: no-repeat;
     position: relative;
+
+    @media (max-width: 1130px) {
+      left: -1%;
+    }
+
   }
 
   &__landing-content {
     position: absolute;
     top: 215px;
-    left: 119px;
+    left: 14%;
+
+    @media (max-width: 1130px) {
+      left: 8%;
+    }
+
+    @media (min-width: 768px) and (max-width: 1044px) {
+      left: 5%;
+    }
 
     h1 {
       border-bottom: 28px solid #FFC203;
@@ -58,16 +79,24 @@ a {
       color: black;
       font-size: 40px;
       font-weight: 600;
+
+      @media (min-width: 768px) and (max-width: 1044px) {
+        font-size: 30px;
+      }
     }
 
     h2 {
       font-weight: 400;
       font-size: 26px;
+
+      @media (min-width: 768px) and (max-width: 1044px) {
+        font-size: 20px;
+      }
     }
   }
 
   &__how-works {
-    height: 570px;
+    padding-bottom: 80px;
     padding-top: 80px;
     border-bottom: 3px solid $color-brand;
     .container {
