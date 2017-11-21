@@ -1,16 +1,16 @@
 <div class="container p0 m0">
   <div class="home home__background" style="background-image: linear-gradient(-45deg, #FED63E 50%, #FFED72 100%);">
     <div class="home__header">
-      <div class="pt-- pl--">
+      <div class="pt-- pl-- logo">
         <%= link_to root_path do %>
           <%= image_tag "logo.png" %>
         <% end %>
       </div>
-      <%= link_to contact_path do %> <p class="pr">Devenir pharmacie partenaire</p>
+      <%= link_to contact_path do %> <p class="pr hidden-xs">Devenir pharmacie partenaire</p>
       <% end %>
     </div>
     <div class="home__baseline">
-      <%= image_tag "Smartphone.png", id: "smartphone" %>
+      <%= image_tag "Smartphone.png", id: "smartphone", class: "hidden-xs" %>
       <div id="background-square" style="background-image: url('<%= image_url "background_element.png" %>')">
         <div class="home__landing-content">
           <h1>OUBLIEZ LA QUEUE EN PHARMACIE</h1>
@@ -24,8 +24,8 @@
     </div>
     <div class="home__how-works" style="background-image: linear-gradient(-180deg, #FFFEFB 0%, #FFFCF0 100%);">
       <h2 class="text-center">COMMENT ÇA MARCHE ?</h2>
-      <p class="text-center pb+ mb+">Simple comme trois clics</p>
-      <div class="container ">
+      <p class="text-center padding">Simple comme trois clics</p>
+      <div class="container">
         <div class="row">
           <div class="col-md-3 col-xs-12">
             <div class="polygon-demo" style="background-image: url('<%= image_url "polygon.png" %>')">
@@ -34,7 +34,7 @@
                 <h2 class="text-center">Cherchez une pharmacie</h2>
               </div>
             </div>
-            <p class="text-center pt">Trouvez la pharmacie la plus proche de chez vous et rendez-vous sur son site.</p>
+            <p class="text-center pt pb">Trouvez la pharmacie la plus proche de chez vous et rendez-vous sur son site.</p>
           </div>
           <div class="hidden-xs col-md-1 next-step">
             <%= image_tag "next.png", class:"align-middle" %>
@@ -46,19 +46,19 @@
                 <h2 class="text-center">Envoyez votre ordonnance en photo</h2>
               </div>
             </div>
-            <p class="text-center pt">Prenez votre ordonnance en photo, envoyez la en 2 clics.</p>
+            <p class="text-center pt pb">Prenez votre ordonnance en photo, envoyez la en 2 clics.</p>
           </div>
           <div class="hidden-xs col-md-1 next-step">
             <%= image_tag "next.png", class:"align-middle" %>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-3">
+          <div class="col-xs-12 col-md-3">
             <div class="polygon-demo" style="background-image: url('<%= image_url "polygon.png" %>')">
               <div class="polygon-demo--width">
                 <%= image_tag "icon_drugs.png" %>
                 <h2 class="text-center">Récuperez votre commande</h2>
               </div>
             </div>
-            <p class="text-center pt">Venez récuperer votre ordonnance après avoir reçu une notification de votre pharmacien.</p>
+            <p class="text-center pt pb">Venez récuperer votre ordonnance après avoir reçu une notification de votre pharmacien.</p>
           </div>
         </div>
       </div>
@@ -66,28 +66,30 @@
     <div class="home__products">
       <h2 class="text-center">DES PRODUITS A PRIX PLANCHER</h2>
       <p class="text-center pb+ mb+">Une sélection de produits à prix coutants à commander exclusivement sur le site de votre pharmacie avec votre ordonnance.</p>
-      <div class="span8 welcome-image">
-        <div id="myCarousel" class="carousel slide col-md-6 col-md-offset-3" data-ride="carousel">
-        <!-- Carousel items -->
-          <div class="carousel-inner" role="listbox">
-            <% @products.each_with_index do |product, index| %>
-                <div class="<%= "active" if index == 0 %> item">
-                <%= cl_image_tag product.image, height: 459, width: 699, crop: :fill %>
-                </div>
-            <% end %>
-          </div>
-            <!-- Carousel nav -->
-          <a class="carousel-control left car-nav" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right car-nav" href="#myCarousel" data-slide="next">&rsaquo;</a>
-
-            <!-- LINKED NAV -->
-          <div class="text-center">
-            <ol class="carousel-linked-nav pt carousel-indicators">
+      <div class="carrousel-container">
+        <div class="span8 welcome-image">
+          <div id="myCarousel" class="carousel slide col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3" data-ride="carousel">
+          <!-- Carousel items -->
+            <div class="carousel-inner" role="listbox">
               <% @products.each_with_index do |product, index| %>
-                  <li data-target="#myCarousel" data-slide-to="<%= index %>" <%= "class=active" if index == 0 %>><i class="fa fa-circle" aria-hidden="true"></i></a>
-                  </li>
+                  <div class="<%= "active" if index == 0 %> item">
+                  <%= cl_image_tag product.image, height: 459, width: 699, crop: :fill %>
+                  </div>
               <% end %>
-            </ol>
+            </div>
+              <!-- Carousel nav -->
+            <a class="carousel-control left car-nav" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right car-nav" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+              <!-- LINKED NAV -->
+            <div class="text-center">
+              <ol class="carousel-linked-nav pt carousel-indicators">
+                <% @products.each_with_index do |product, index| %>
+                    <li data-target="#myCarousel" data-slide-to="<%= index %>" <%= "class=active" if index == 0 %>><i class="fa fa-circle" aria-hidden="true"></i></a>
+                    </li>
+                <% end %>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
@@ -97,11 +99,11 @@
       <div class="container pt+">
         <div class="row">
           <% @quotes.each_with_index do |quote, index| %>
-            <div class="col-md-4 <%= "col-md-offset-2" if index == 0  %>">
+            <div class="col-xs-12 col-sm-4 <%= "col-sm-offset-2" if index == 0  %>">
               <div class="testimonials-background">
                 <%= image_tag "quote.png", class:"testimonials-quote" %>
                 <%= cl_image_tag quote.image, height: 100, width: 100, crop: :fill, class:"testimonials-image" %>
-                <p class="p"><%= quote.content %></p>
+                <p class="padding"><%= quote.content %></p>
                 <p class="testimonials-people pl"><%= quote.name %>,<strong> <%= quote.title.downcase %></strong></p>
               </div>
             </div>
@@ -112,7 +114,7 @@
     <div class="home__start-now" style="background-image: linear-gradient(-45deg, #FED63E 50%, #FFED72 100%);">
       <h2 class="text-center pt+">COMMENCEZ L'EXPERIENCE CLIC & PRIX</h2>
       <p class="text-center">Trouvez une pharmacie près de chez vous.</p>
-      <div class="col-md-6 col-md-offset-3 pt+ mt+">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 mt+ padding">
         <%= render 'shared/research-button' %>
       </div>
     </div>
@@ -121,7 +123,7 @@
       <p class="text-center">Le service de l’experience en pharmacie.</p>
       <div class="container pt+">
         <div class="row">
-          <div class="col-md-4 about--container">
+          <div class="col-xs-12 col-md-4 about--container">
             <%= image_tag "icon-Advantages.png" %>
             <h3 class="text-center pt pb">SIMPLICITÉ</h3>
             <div>
@@ -129,7 +131,7 @@
               <p><i class="fa fa-check" aria-hidden="true"></i> Accessible sur tous supports</p>
             </div>
           </div>
-          <div class="col-md-4 about--container">
+          <div class="col-xs-12 col-md-4 about--container">
             <%= image_tag "icon-time.png" %>
             <h3 class="text-center pt pb">RAPIDITÉ</h3>
             <div>
@@ -137,7 +139,7 @@
               <p><i class="fa fa-check" aria-hidden="true"></i> Accessible sur tous supports</p>
             </div>
           </div>
-          <div class="col-md-4 about--container">
+          <div class="col-xs-12 col-md-4 about--container">
             <%= image_tag "icon-exclu.png" %>
             <h3 class="text-center pt pb">EXCLUSIVITÉ</h3>
             <div>
