@@ -15,7 +15,11 @@
   justify-content: space-between;
 
   .search-field {
-    flex: 1 0 80%
+    flex: 1 0 80%;
+
+    @media (max-width: 768px) {
+      flex: 1 0 60%;
+    }
   }
 
   .fa-map-marker {
@@ -40,6 +44,10 @@
     border-bottom-right-radius: 100px;
     margin-right: -4px;
     text-align: center;
+
+    @media (max-width: 768px) {
+      width: 80px;
+    }
 
     a {
       color: white;
