@@ -1,17 +1,43 @@
 .result-container {
   display: flex;
 }
+
+.pl25 {
+  padding-left: 25px;
+}
 .results {
   width: 50%;
   margin: 0px;
   padding: 0px;
 
-  .pl25 {
-    padding-left: 25px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  .results__search-bar {
+    img {
+      @media (max-width: 768px) {
+        width: 35%;
+      }
+    }
+
+    p {
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .padding {
+    padding: 20px 0 0 25px;
+
+    @media (max-width: 768px) {
+      padding: 6px 0 0 13px;
+    }
   }
 
   &__search-bar {
-    height: 30vh;
+    padding-bottom: 12px;
   }
 
   &__list {
