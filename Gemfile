@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.1'
 
-gem 'devise'
+
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
@@ -21,8 +21,6 @@ gem "gmaps4rails"
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
-gem 'activeadmin', github: 'activeadmin/activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem "geocoder"
 
 
