@@ -10,15 +10,23 @@
     box-shadow: -3px -8px 10px 0 rgba(0,0,0,0.04), 3px 8px 10px 0 rgba(0,0,0,0.09);
 
     .order-button {
-    padding: 5px 25%;
-    background-color: $cta-blue;
-    color: white;
-    border-radius: 31px;
+      padding: 5px 20%;
+      background-color: $cta-blue;
+      color: white;
+      border-radius: 31px;
+
+      @media (max-width: 1220px) {
+        padding: 5px 10%;
+      }
     }
   }
 
   &__content {
     width: 69%;
+
+    @media (max-width: 992px) {
+      width: 100%;
+    }
 
     .card-title {
       font-size: 18px;
