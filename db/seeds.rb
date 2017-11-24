@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
+
 
 p "start seeding"
 
@@ -13,7 +13,7 @@ Product.all.each(&:destroy!)
 Quote.all.each(&:destroy!)
 Pharmacy.all.each(&:destroy!)
 
-10.times do
+5.times do
   product = Product.new
   product.name = "product"
   url = "https://source.unsplash.com/1200x800/"
@@ -23,9 +23,11 @@ end
 
 2.times do
   quote = Quote.new
-  quote.name = "#{Faker::Name.first_name} #{Faker::Name.name }"
+  quote.name = "Marie Dupont"
   quote.title = "cliente Clic et Prix"
-  quote.content = Faker::Hipster.paragraph
+  quote.content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
   url = "https://source.unsplash.com/400x400/"
   quote.remote_image_url = url
   quote.save!
@@ -33,7 +35,7 @@ end
 
 5.times do
   pharmacy = Pharmacy.new
-  pharmacy.name = Faker::Company.name
+  pharmacy.name = "Pharmacie de Marseille"
   pharmacy.url = "http://pharmacie-passard.clicetprix.com"
   url = "https://source.unsplash.com/400x300/"
   pharmacy.remote_image_url = url
