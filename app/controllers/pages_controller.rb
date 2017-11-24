@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :contact, :new_contact]
+
 
   def home
     @products = Product.all

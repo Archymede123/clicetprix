@@ -57,11 +57,16 @@ function getAddressComponents(place) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+
+
   var pharmacyAddress = document.getElementById('pharmacy-lookup');
 
   if (pharmacyAddress) {
     var autocomplete = new google.maps.places.Autocomplete(pharmacyAddress, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+
+
+
     // google.maps.event.addDomListener(pharmacyAddress, 'keydown', function(e) {
     //   if (e.key === "Enter") {
     //     e.preventDefault(); // Do not submit the form on Enter.
