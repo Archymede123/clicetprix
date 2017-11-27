@@ -36,9 +36,17 @@
 
 <% content_for(:after_js) do %>
   <script type="text/javascript">
-    var handler = Gmaps.build('Google');
 
+
+    var mapOptions = {
+      center: new google.maps.LatLng(46.52863469527167,2.43896484375),
+      minZoom: 6,
+      maxZoom: 18,
+    };
+
+    var handler = Gmaps.build('Google');
     handler.buildMap({
+      provider:  mapOptions ,
       internal: { id: 'map' },
     },
 
