@@ -17,7 +17,11 @@
       </div>
     </div>
     <div class="results__list" style="background-image: linear-gradient(-180deg, #FFFEFB 0%, #FFFCF0 100%);">
-      <p class="pl25 pt">Les pharmacies Clic & Prix proches de chez vous :</p>
+      <% if @pharmacies.empty? %>
+        <p class="pl25 pt">Il n'y pas de pharmacies Clic & Prix proche de chez vous.</p>
+      <% else %>
+        <p class="pl25 pt">Les pharmacies Clic & Prix proches de chez vous (<%= @pharmacies.to_a.count %> résultats) :</p>
+      <% end %>
       <div class="card-container pt pl- pr- ">
         <% @pharmacies.each do |pharmacy| %>
           <%= render 'shared/card', pharmacy: pharmacy %>
@@ -29,14 +33,39 @@
   <div class="hidden-xs map-container">
     <div id="map" style="width: 100%; height: 100vh;"></div>
   </div>
+  </div>
 
 
-</div>
+  <% content_for(:script) do %>
+  <script type="text/javascript">
+
+    Gmaps.map.infobox = function(boxText) {
+   return {
+      content: boxText
+     ,disableAutoPan: false
+     ,maxWidth: 0
+     ,pixelOffset: new google.maps.Size(-140, 0)
+     ,zIndex: null
+     ,boxStyle: {
+       background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.5/examples/tipbox.gif') no-repeat"
+       ,opacity: 0.75
+       ,width: "280px"
+        }
+     ,closeBoxMargin: "10px 2px 2px 2px"
+     ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+     ,infoBoxClearance: new google.maps.Size(1, 1)
+     ,isHidden: false
+     ,pane: "floatPane"
+     ,enableEventPropagation: false
+  }};
+  </script>
+  <% end %>
+
+
 
 
 <% content_for(:after_js) do %>
   <script type="text/javascript">
-
 
     var mapOptions = {
       center: new google.maps.LatLng(46.52863469527167,2.43896484375),
@@ -46,7 +75,7 @@
 
     var handler = Gmaps.build('Google');
     handler.buildMap({
-      provider:  mapOptions ,
+      provider:  mapOptions,
       internal: { id: 'map' },
     },
 
@@ -54,6 +83,7 @@
     function() {
 
       markers = <%= raw @hash.to_json %>
+
 
       Gmaps.store = {}
 
@@ -98,8 +128,6 @@
 
       });
 
-
-
       handler.bounds.extendWith(Gmaps.store.markers);
       handler.fitMapToBounds();
 
@@ -109,6 +137,7 @@
         handler.getMap().setZoom(4);
       }
     });
+
 
 
   </script>
