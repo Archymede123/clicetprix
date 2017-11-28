@@ -1,14 +1,6 @@
 <div class="container p0 m0">
   <div class="home home__background" style="background-image: linear-gradient(-45deg, #FED63E 50%, #FFED72 100%);">
-    <div class="home__header">
-      <div class="pt-- pl-- logo">
-        <%= link_to root_path do %>
-          <%= image_tag "logo.png" %>
-        <% end %>
-      </div>
-      <%= link_to contact_path do %> <p class="pr hidden-xs">Devenir pharmacie partenaire </p>
-      <% end %>
-    </div>
+    <%= render 'shared/header' %>
     <div class="home__baseline">
       <%= image_tag "Smartphone.png", id: "smartphone", class: "hidden-xs" %>
       <div id="background-square" style="background-image: url('<%= image_url "background_element.png" %>')">
@@ -156,23 +148,7 @@
         </div>
       </div>
     </div>
-    <div class="home__footer" style="background-image: linear-gradient(-180deg, #FFFCF0 0%, #FFFEFB 100%);">
-      <div class="about-cp">
-        <p>A propos de Click & Prix</p>
-        <p>Vous êtes une pharmacie ? Devenez partenaire</p>
-        <p>Termes et conditions</p>
-      </div>
-      <div class="pr+ mr+ social-links">
-        <p class="hidden-xs">Retrouvez nous sur les réseaux sociaux</p>
-        <ul class="list-inline text-center">
-          <li><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></li>
-          <li><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></li>
-          <li><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></li>
-        </ul>
-      </div>
-
-
-    </div>
+    <%= render 'shared/footer' %>
   </div>
 </div>
 

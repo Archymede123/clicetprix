@@ -1,0 +1,30 @@
+.footer {
+
+  @media (min-width: 768px) {
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .about-cp {
+      padding-left: 80px;
+    }
+
+  }
+
+  @media (max-width: 768px) {
+    padding: 5% 0 0 5%;
+
+    .social-links {
+      padding-top: 30px;
+    }
+  }
+
+  .list-unstyled {
+    font-weight: 500;
+  }
+
+  .social-links i:hover {
+     color: $color-brand;
+  }
+}

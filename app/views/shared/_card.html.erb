@@ -1,14 +1,16 @@
 <div class="card" id="pharmacy-<%= pharmacy.id %>">
   <div class="card__content pt pl">
     <p class="card-title"><%= pharmacy.name  %></p>
-    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp <%= "#{pharmacy.address.street}, #{pharmacy.address.zip_code}, #{pharmacy.address.city}" %></p>
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp <%= "#{pharmacy.street}, #{pharmacy.zip_code}, #{pharmacy.city}" %></p>
     <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times %></p>
     <div class="pt--">
       <a href="<%= pharmacy.url %>" class="order-button">Commander dans cette pharmacie</a>
     </div>
   </div>
-  <div class="card__picture hidden-xs hidden-sm">
-    <%= cl_image_tag pharmacy.image, height: 150, width: 214, crop: :fill %>
-  </div>
+  <% if pharmacy.image.present? %>
+    <div class="card__picture hidden-xs hidden-sm">
+      <%= cl_image_tag pharmacy.image, height: 150, width: 214, crop: :fill %>
+    </div>
+  <% end %>
 </div>
 
