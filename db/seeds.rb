@@ -40,11 +40,10 @@ end
   url = "https://source.unsplash.com/400x300/"
   pharmacy.remote_image_url = url
   pharmacy.opening_times = "Ouvert du lundi au samedi de 09h à 19h."
-  street = ["05 rue Sylvabelle", "84 rue dragon", "34 rue falque"].sample
-  address = Address.new(street: street, zip_code: "13006", city: "Marseille")
-  pharmacy.address = address
+  pharmacy.street = ["05 rue Sylvabelle", "84 rue dragon", "34 rue falque"].sample
+  pharmacy.zip_code = "13006"
+  pharmacy.city = "Marseille"
   pharmacy.save!
-  address.save!
 end
 
 p "seeding completed"
