@@ -232,6 +232,10 @@ a {
     color: $color-brand;
     background-color: black;
 
+    @media (max-width: 500px) {
+      top: 53px;
+    }
+
     &:hover {
       opacity: 0.5;
     }
@@ -239,6 +243,17 @@ a {
   .right, .left {
       background-image: none !important;
   }
+
+   @media (max-width: 500px) {
+    .right {
+      right: -15px;
+    }
+
+    .left {
+      left: -21px;
+    }
+   }
+
 
   .carousel-indicators {
     bottom: -50px;
