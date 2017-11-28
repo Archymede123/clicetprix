@@ -58,11 +58,14 @@ function getAddressComponents(place) {
 
 document.addEventListener("DOMContentLoaded", function() {
 
+  var option = {
+    componentRestrictions: {country: "fr"}
+  };
 
   var pharmacyAddress = document.getElementById('pharmacy-lookup');
 
   if (pharmacyAddress) {
-    var autocomplete = new google.maps.places.Autocomplete(pharmacyAddress, { types: ['geocode'] });
+    var autocomplete = new google.maps.places.Autocomplete(pharmacyAddress, option, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
 
 

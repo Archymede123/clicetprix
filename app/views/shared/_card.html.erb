@@ -4,7 +4,7 @@
     <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp <%= "#{pharmacy.address.street}, #{pharmacy.address.zip_code}, #{pharmacy.address.city}" %></p>
     <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times %></p>
     <div class="pt--">
-      <a href="http://pharmacie-passard.clicetprix.com" class="order-button">Commander dans cette pharmacie</a>
+      <a href="<%= pharmacy.url %>" class="order-button">Commander dans cette pharmacie</a>
     </div>
   </div>
   <div class="card__picture hidden-xs hidden-sm">
