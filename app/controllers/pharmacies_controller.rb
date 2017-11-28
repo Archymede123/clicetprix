@@ -5,9 +5,7 @@ class PharmaciesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@pharmacies) do |pharmacie, marker|
       marker.lat pharmacie.latitude
       marker.lng pharmacie.longitude
-      marker.infowindow "<p>#{pharmacie.name}
-       </p>
-      <a href='#{pharmacie.url}' class='infowindow-card-button'>Voir le site .</p>"
+      marker.infowindow marker.infowindow render_to_string(partial: "/shared/map-infowindow", :locals => { :pharmacy => pharmacie})
       marker.json(id: pharmacie.id)
       marker.picture(
         url: ActionController::Base.helpers.asset_path("map_locator4.png"),

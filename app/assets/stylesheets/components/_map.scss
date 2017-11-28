@@ -26,3 +26,18 @@
     margin-bottom: 0;
   }
 }
+
+.gm-style-iw {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+.gm-style-iw > div {
+  overflow: visible !important;
+}
+.infowindow-map {
+  overflow: hidden !important;
+
+  .infowindow-last-child {
+    margin-bottom: 18px;
+  }
+}

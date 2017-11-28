@@ -110,6 +110,21 @@
 }
 
 .infowindow-card-button {
+  text-align: center;
+  margin: 0px 6px;
+  padding: 5px 20px;
+  text-decoration: underline;
+  background-color: $cta-blue;
+  color: white;
+  border-radius: 31px;
 
+  &:hover {
+    color: white;
+  }
+}
+
+.infowindow-card-title {
+  font-size: 18px;
+  font-weight: bolder;
 }
 
