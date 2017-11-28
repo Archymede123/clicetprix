@@ -1,9 +1,7 @@
 class PharmaciesController < ApplicationController
 
   def index
-
-    address = params[:address]
-    @pharmacies = Pharmacy.where.not(latitude: nil, longitude: nil).near(address, 10)
+    define_pharmacies
     @hash = Gmaps4rails.build_markers(@pharmacies) do |pharmacie, marker|
       marker.lat pharmacie.latitude
       marker.lng pharmacie.longitude
@@ -19,4 +17,14 @@ class PharmaciesController < ApplicationController
     end
   end
 
+  private
+
+  def define_pharmacies
+    if params[:address].present?
+      address = params[:address]
+      @pharmacies = Pharmacy.where.not(latitude: nil, longitude: nil).near(address, 10)
+    else
+      @pharmacies = Pharmacy.all
+    end
+  end
 end
