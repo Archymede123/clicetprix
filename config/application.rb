@@ -34,3 +34,7 @@ module Clicetprix
     config.generators.system_tests = nil
   end
 end
+
+Raven.configure do |config|
+  config.dsn = ENV.fetch("SENTRY_DSN")
+end

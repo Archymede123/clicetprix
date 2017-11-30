@@ -23,6 +23,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem "geocoder"
 gem "rails_admin", :git => "git://github.com/sferik/rails_admin.git"
+gem "sentry-raven"
 
 
 source 'https://rails-assets.org' do
