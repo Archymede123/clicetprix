@@ -62,10 +62,13 @@ document.addEventListener("DOMContentLoaded", function() {
     componentRestrictions: {country: "fr"}
   };
 
-  var pharmacyAddress = document.getElementById('pharmacy-lookup');
+  var pharmacyAddress = document.getElementsByClassName('pharmacy-lookup');
 
   if (pharmacyAddress) {
-    var autocomplete = new google.maps.places.Autocomplete(pharmacyAddress, option, { types: ['geocode'] });
+    for (i = 0; i < pharmacyAddress.length; i++) {
+        autocomplete = new google.maps.places.Autocomplete(pharmacyAddress[i], option);
+    }
+    // var autocomplete = new google.maps.places.Autocomplete(pharmacyAddress, option, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
 
 
