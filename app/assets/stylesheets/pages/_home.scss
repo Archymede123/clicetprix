@@ -37,6 +37,10 @@ a {
     &p {
       color: gray;
     }
+
+    a {
+      z-index: 999;
+    }
   }
 
   &__baseline {
