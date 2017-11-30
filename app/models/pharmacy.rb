@@ -1,6 +1,4 @@
 class Pharmacy < ApplicationRecord
-
-
   mount_uploader :image, PhotoUploader
   validates :name, presence: true
   validates :opening_times, presence: true
