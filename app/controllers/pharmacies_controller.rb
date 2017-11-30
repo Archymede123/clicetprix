@@ -1,18 +1,9 @@
 class PharmaciesController < ApplicationController
-
   def index
     define_pharmacies
-    @hash = Gmaps4rails.build_markers(@pharmacies) do |pharmacie, marker|
-      marker.lat pharmacie.latitude
-      marker.lng pharmacie.longitude
-      marker.infowindow marker.infowindow render_to_string(partial: "/shared/map-infowindow", :locals => { :pharmacy => pharmacie})
-      marker.json(id: pharmacie.id)
-      marker.picture(
-        url: ActionController::Base.helpers.asset_path("map_locator4.png"),
-        width: 33,
-        height: 49,
-      )
-    end
+    @hash = Gmaps4rails.build_markers(@pharmacies) { |pharmacie, marker|
+      set_marker(pharmacie, marker)
+    }
   end
 
   private
@@ -24,5 +15,18 @@ class PharmaciesController < ApplicationController
     else
       @pharmacies = Pharmacy.all
     end
+  end
+
+  def set_marker(pharmacie, marker)
+    marker.lat pharmacie.latitude
+    marker.lng pharmacie.longitude
+    marker.infowindow marker.infowindow render_to_string(partial: "/shared/map-infowindow",
+                                                         locals: { pharmacy: pharmacie })
+    marker.json(id: pharmacie.id)
+    marker.picture(
+      url: ActionController::Base.helpers.asset_path("map_locator4.png"),
+      width: 33,
+      height: 49,
+    )
   end
 end
