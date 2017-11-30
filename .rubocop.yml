@@ -1,0 +1,85 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'lib/tasks/auto_annotate_models.rake'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+    - 'app/admin/*'
+    - 'tmp/*'
+    - Guardfile
+    - Gemfile
+    - 'node_modules/**/*'
+    - 'app/controllers/users/registrations_controller.rb'
+
+Documentation:
+  Enabled: false
+
+FrozenStringLiteralComment:
+  Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - lib/tasks/**/*
+
+Metrics/AbcSize:
+  Max: 25
+  Exclude:
+    - 'app/models/user.rb'
+
+AsciiComments:
+  Enabled: false
+
+AlignParameters:
+  Enabled: false
+
+Lint/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+
+Metrics/LineLength:
+  Max: 110
+  IgnoredPatterns: ['(\A|\s)#']
+
+Metrics/ClassLength:
+  Max: 150
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+
+Style/Lambda:
+  Enabled: false
+
+Style/SignalException:
+  EnforcedStyle: semantic
+
+Style/NumericLiteralPrefix:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+  Exclude:
+    - test/**/*
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+  Exclude:
+    - test/**/*

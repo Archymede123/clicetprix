@@ -1,16 +1,12 @@
 class PagesController < ApplicationController
-
   def home
     @products = Product.all
-    @quotes = Quote.limit(2).order('id desc')
+    @quotes = Quote.limit(2).order("id desc")
   end
 
-  def about
-  end
+  def about; end
 
-  def contact
-
-  end
+  def contact; end
 
   def new_contact
     @contact = set_contact

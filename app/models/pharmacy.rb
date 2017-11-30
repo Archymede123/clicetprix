@@ -11,7 +11,6 @@ class Pharmacy < ApplicationRecord
   after_validation :geocode
 
   def full_address
-    "#{self.street}, #{self.zip_code} #{self.city}"
+    "#{street}, #{zip_code} #{city}"
   end
 end
-
