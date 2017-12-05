@@ -135,7 +135,7 @@ a {
   }
 
   &__how-works {
-    padding: 80px 0;
+    padding: 40px 0;
     border-bottom: 3px solid $color-brand;
 
     @media (max-width: 1044px) {
@@ -148,7 +148,7 @@ a {
     }
 
     .padding {
-      padding-bottom: 80px;
+      padding-bottom: 20px;
 
       @media (max-width: 1044px) {
         padding-bottom: 30px;
@@ -192,7 +192,7 @@ a {
   }
 
   &__products {
-    padding: 80px 0;
+    padding: 40px 0 60px;
     border-bottom: 3px solid $color-brand;
 
     .carrousel-container {
@@ -273,7 +273,7 @@ a {
 
 
   &__testimonials {
-    padding: 4% 0px;
+    padding: 1% 0px 2%;
 
     .testimonials-background {
       background: #FFFFFF;
@@ -327,7 +327,7 @@ a {
   }
 
   &__start-now {
-    height: 300px;
+    height: 257px;
 
     .padding {
 
