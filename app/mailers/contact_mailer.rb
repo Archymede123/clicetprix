@@ -8,7 +8,7 @@ class ContactMailer < ApplicationMailer
     @contact = contact
 
     mail(
-      to:       "reynaudtimothee@gmail.com",
+      to:       "pharmacies@clicetprix.com",
       subject:  "Nouveau contact sur Clic et Prix",
     )
   end

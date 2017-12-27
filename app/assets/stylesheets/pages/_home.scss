@@ -38,8 +38,9 @@ a {
       color: gray;
     }
 
-    a {
+    .header-navigation {
       z-index: 999;
+      display: flex;
     }
   }
 
