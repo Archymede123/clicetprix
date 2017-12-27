@@ -38,8 +38,9 @@ a {
       color: gray;
     }
 
-    a {
+    .header-navigation {
       z-index: 999;
+      display: flex;
     }
   }
 
@@ -48,6 +49,7 @@ a {
   }
 
   #smartphone {
+    height: 450px;
     position: relative;
     left: 10%;
     top: 100px;
