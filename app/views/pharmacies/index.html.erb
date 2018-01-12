@@ -20,7 +20,11 @@
       <% if @pharmacies.empty? %>
         <p class="pl25 pt">Il n'y pas de pharmacies Clic & Prix proche de chez vous.</p>
       <% else %>
-        <p class="pl25 pt">Les pharmacies Clic & Prix proches de chez vous (<%= @pharmacies.to_a.count %> résultats) :</p>
+        <p class="pl25 pt">Les pharmacies Clic & Prix proches de chez vous <% if @pharmacies.to_a.count == 1 %>
+          (<%= @pharmacies.to_a.count %> résultat) :
+          <% else %>
+         (<%= @pharmacies.to_a.count %> résultats) :</p>
+         <% end %>
       <% end %>
       <div class="card-container pt pl- pr- ">
         <% @pharmacies.each do |pharmacy| %>

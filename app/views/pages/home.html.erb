@@ -96,7 +96,7 @@
                 <%= image_tag "quote.png", class:"testimonials-quote" %>
                 <%= cl_image_tag quote.image, height: 100, width: 100, crop: :fill, class:"testimonials-image" %>
                 <p class="padding"><%= quote.content %></p>
-                <p class="testimonials-people pl"><%= quote.name %>,<strong> <%= quote.title.downcase %></strong></p>
+                <p class="testimonials-people pl"><%= quote.name %><strong> <%= quote.title.downcase %></strong></p>
               </div>
             </div>
           <% end %>
