@@ -1,9 +1,28 @@
 <div class="card" id="pharmacy-<%= pharmacy.id %>">
   <div class="card__content pt pl">
     <p class="card-title"><%= pharmacy.name  %></p>
-    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp <%= "#{pharmacy.street}, #{pharmacy.zip_code}, #{pharmacy.city}" %></p>
-    <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times %></p>
-    <div class="pt--">
+    <p>
+      <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp <%= "#{pharmacy.street}, #{pharmacy.zip_code}, #{pharmacy.city}" %>
+    </p>
+    <p>
+      <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times %>
+    </p>
+    <% unless pharmacy.opening_times_second.nil? %>
+      <p>
+        <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times_second %>
+      </p>
+    <% end %>
+    <% unless pharmacy.opening_times_third.nil? %>
+      <p>
+        <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times_third %>
+      </p>
+    <% end %>
+    <% unless pharmacy.phone_number.nil? %>
+      <p>
+        <i class="fa fa-phone" aria-hidden="true"></i>&nbsp<%= pharmacy.phone_number %>
+      </p>
+    <% end %>
+    <div class="pt-- padding-bottom-button">
       <a href="<%= pharmacy.url %>" class="order-button">Commander dans cette pharmacie</a>
     </div>
   </div>
