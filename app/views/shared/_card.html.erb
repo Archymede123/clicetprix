@@ -12,10 +12,12 @@
         <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times_second %>
       </p>
     <% end %>
-    <% unless pharmacy.opening_times_third.nil? %>
+    <% unless pharmacy.opening_times_third.nil?  %>
+      <% unless pharmacy.opening_times_third.empty?  %>
       <p>
         <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times_third %>
       </p>
+      <% end %>
     <% end %>
     <% unless pharmacy.phone_number.nil? %>
       <p>
