@@ -8,21 +8,25 @@
       <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times %>
     </p>
     <% unless pharmacy.opening_times_second.nil? %>
-      <p>
-        <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times_second %>
-      </p>
+      <% unless pharmacy.opening_times_second.empty? %>
+        <p>
+          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times_second %>
+        </p>
+      <% end %>
     <% end %>
     <% unless pharmacy.opening_times_third.nil?  %>
       <% unless pharmacy.opening_times_third.empty?  %>
-      <p>
-        <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times_third %>
-      </p>
+        <p>
+          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp<%= pharmacy.opening_times_third %>
+        </p>
       <% end %>
     <% end %>
     <% unless pharmacy.phone_number.nil? %>
-      <p>
-        <i class="fa fa-phone" aria-hidden="true"></i>&nbsp<%= pharmacy.phone_number %>
-      </p>
+      <% unless pharmacy.phone_number.empty? %>
+        <p>
+          <i class="fa fa-phone" aria-hidden="true"></i>&nbsp<%= pharmacy.phone_number %>
+        </p>
+      <% end %>
     <% end %>
     <div class="pt-- padding-bottom-button">
       <a href="<%= pharmacy.url %>" class="order-button">Commander dans cette pharmacie</a>
